@@ -227,7 +227,7 @@ public class AccountsRepositoryJdbcImpl implements AccountsRepository {
             ResultSet rows;
 
             try {
-                statement.execute();
+                statement.executeQuery();
             } catch (SQLException e) {
                 throw new IllegalArgumentException(e);
             }
