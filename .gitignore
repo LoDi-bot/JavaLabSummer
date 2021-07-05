@@ -104,3 +104,4 @@ fabric.properties
 .idea/vcs.xml
 untitled104.iml
 .idea/dataSources.xml
+.idea/sqldialects.xml
