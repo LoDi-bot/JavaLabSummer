@@ -1,5 +1,7 @@
 package ru.itis;
 
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 import ru.itis.models.Account;
 
 import javax.sql.DataSource;
@@ -21,12 +23,20 @@ public class Main {
             throw new IllegalArgumentException(e);
         }
 
-        DataSource dataSource = new SimpleDataSource(properties);
+//        DataSource dataSource = new SimpleDataSource(properties);
+
+        HikariConfig config = new HikariConfig();
+        config.setJdbcUrl(properties.getProperty("db.url"));
+        config.setUsername(properties.getProperty("db.user"));
+        config.setPassword(properties.getProperty("db.password"));
+        config.setDriverClassName(properties.getProperty("db.driver"));
+        config.setMaximumPoolSize(Integer.parseInt(properties.getProperty("db.hikari.pool-size")));
+
+        DataSource dataSource = new HikariDataSource(config);
 
         AccountsRepository accountsRepository = new AccountsRepositoryJdbcImpl(dataSource);
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(accountsRepository.findAllByFirstNameOrLastNameLike(""));
+        System.out.println(accountsRepository.findAllByFirstName("Марсель"));
         System.out.println("Everything is OK");
     }
 }
