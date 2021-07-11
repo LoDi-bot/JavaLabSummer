@@ -36,7 +36,7 @@ public class Main {
 
         AccountsRepository accountsRepository = new AccountsRepositoryJdbcImpl(dataSource);
 
-        System.out.println(accountsRepository.findAllByFirstName("Марсель"));
+        System.out.println(accountsRepository.findAllByFirstNameOrLastNameLike("ев"));
         System.out.println("Everything is OK");
     }
 }

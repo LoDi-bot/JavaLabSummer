@@ -55,7 +55,6 @@ public class AccountsRepositoryJdbcImpl implements AccountsRepository {
         try (Connection connection = dataSource.getConnection();
              Statement statement = connection.createStatement();
              ResultSet rows = statement.executeQuery(SQL_SELECT_ALL)) {
-
             while (rows.next()) {
                 accounts.add(map.apply(rows));
             }
@@ -66,13 +65,13 @@ public class AccountsRepositoryJdbcImpl implements AccountsRepository {
     }
 
     @Override
-    public List<Account> findAllByFirstName(String searchFirstName) {
+    public List<Account> findAllByFirstName(String FirstName) {
         List<Account> accounts = new ArrayList<>();
         ResultSet rows = null;
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(SQL_SELECT_ALL_BY_FIRST_NAME)) {
 
-            statement.setString(1, searchFirstName);
+            statement.setString(1, FirstName);
 
             rows = statement.executeQuery();
 
@@ -93,12 +92,12 @@ public class AccountsRepositoryJdbcImpl implements AccountsRepository {
     }
 
     @Override
-    public Optional<Account> findByID(Integer searchId) {
+    public Optional<Account> findByID(Integer Id) {
         ResultSet row = null;
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(SQL_SELECT_BY_ID)) {
 
-            statement.setInt(1, searchId);
+            statement.setInt(1, Id);
 
             row = statement.executeQuery();
 
@@ -120,8 +119,8 @@ public class AccountsRepositoryJdbcImpl implements AccountsRepository {
     }
 
     @Override
-    public List<Account> findAllByFirstNameOrLastNameLike(String searchNameLike) {
-        searchNameLike = "%" + searchNameLike + "%";
+    public List<Account> findAllByFirstNameOrLastNameLike(String NameLike) {
+        NameLike = "%" + NameLike + "%";
         List<Account> accounts = new ArrayList<>();
         try {
             Connection connection;
@@ -140,8 +139,8 @@ public class AccountsRepositoryJdbcImpl implements AccountsRepository {
                 throw new IllegalArgumentException(e);
             }
 
-            statement.setString(1, searchNameLike);
-            statement.setString(2, searchNameLike);
+            statement.setString(1, NameLike);
+            statement.setString(2, NameLike);
 
             ResultSet rows;
 

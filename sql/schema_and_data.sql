@@ -2,9 +2,9 @@
 create table account
 (
     id         serial primary key,
-    first_name char(20)                                 not null,
-    last_name  char(20)                                 not null,
-    age        integer check ( age >= 0 and age <= 120) not null default 1
+    first_name char(20)                                not null,
+    last_name  char(20)                                not null,
+    age        integer check (age >= 0 and age <= 120) not null default 1,
 );
 
 -- внесение данных в таблицу с пользователями
