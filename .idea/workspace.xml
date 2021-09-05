@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dea14535-e000-4dbb-9cb7-2afda65ee8df" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/schema_and_data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/schema_and_data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/itis/AccountsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/itis/AccountsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/itis/AccountsRepositoryJdbcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/itis/AccountsRepositoryJdbcImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/itis/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/itis/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="dea14535-e000-4dbb-9cb7-2afda65ee8df" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,6 +141,7 @@
       <workItem from="1625688732891" duration="945000" />
       <workItem from="1625726713138" duration="24000" />
       <workItem from="1625940378062" duration="404000" />
+      <workItem from="1626002064083" duration="10000" />
     </task>
     <servers />
   </component>
