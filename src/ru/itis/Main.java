@@ -23,7 +23,7 @@ public class Main {
             throw new IllegalArgumentException(e);
         }
 
-//        DataSource dataSource = new SimpleDataSource(properties);
+        DataSource dataSource = new SimpleDataSource(properties);
 
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl(properties.getProperty("db.url"));
